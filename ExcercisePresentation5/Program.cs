@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace ExcercisePresentation5
 {
@@ -474,9 +475,81 @@ namespace ExcercisePresentation5
             }
         }
 
+        static void Extra1() //Extra 1
+        {
+            int loop = 1; //variabel som styr loopen
+            while (loop != 0) //kör medans loopen INTE är 0 
+            {
+                Console.WriteLine("Please input a number: "); 
+                int x = Convert.ToInt32(Console.ReadLine()); //användar input 
+
+                Console.WriteLine(x * 10); //skriver ut x gånger 10 
+                loop = x; //sätter loops värde till x 
+            }
+
+        }
+
+        static void Extra2() //Extra 2
+        {
+            int loop = 1; 
+            do //kör kodblocket minst 1 gång
+            {
+                Console.WriteLine("Please input a number: ");
+                int x = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine(x * 10);
+                loop = x;
+
+            }
+            while (loop != 0); //kör inte blocket ovan igen om loop blir 0
+        }
+
+        static void Extra3() //Extra 3
+        {
+
+            int i = 15; //initierar och sätter variablen i till 15 
+            while (i >= 7) //kör loopen medans i är större än eller lika med 7
+            {
+                if (i % 2 != 0) //om resten av i delat på 2 inte är 0 (alltså om talet är ojämt
+                {
+                    Console.WriteLine(i); //skriv ut i 
+                    i--; //ta bort 1 från i's värde
+                }
+                else //annars
+                {
+                    i--; //ta bort 1 från i's värde 
+                }
+            }
+        }
+
+        static void Extra4() //Extra 4
+        {
+            //intierar variabler att räkna med 
+            int numOne = 0;
+            int numTwo = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Please enter a number: ");
+                int input = Convert.ToInt32(Console.ReadLine());
+
+                if (input == 0) //Om man skriver i 0 slutar loopen 
+                {
+                    return;
+                }
+
+                
+                numOne = input; //sätter numOne's värde till det användaren skrev i 
+                int result = numOne + numTwo; //variablen result är lika med numOne plus numTwo
+                numTwo = result; //sätter numTwo till result för att spara totalen till nästa varv 
+
+                Console.WriteLine(result); //skriver ut resultat 
+            }
+        }
+
         static void Main(string[] args)
         {
-            Exempel14();
+            Extra4();
         }
     }
 }
